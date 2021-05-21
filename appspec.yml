@@ -1,18 +1,18 @@
 version: 0.0
 os: linux
 files:
- - source: /index.html
+ - source: /home/ec2-user/sampleapp/index.html
    destination: /var/www/html/
 hooks:
  BeforeInstall:
-  - location: scripts/httpd_install.sh
+  - location: /home/ec2-user/sampleapp/scripts/httpd_install.sh
     timeout: 300
     runas: root
-  - location: scripts/httpd_start.sh
-    timeout: 300
+  - location: /home/ec2-user/sampleapp/scripts/httpd_start.sh
+    timeout: 200
     runas: root
  ApplicationStop:
-  - location: scripts/httpd_stop.sh
-    timeout: 300
+  - location: /home/ec2-user/sampleapp/scripts/httpd_stop.sh
+    timeout: 200
     runas: root
 
