@@ -5,14 +5,14 @@ files:
    destination: /var/www/html/
 hooks:
  BeforeInstall:
-  - location: /home/ec2-user/sampleapp/scripts/httpd_install.sh
+  - location: /scripts/httpd_install.sh
     timeout: 300
     runas: root
-  - location: /home/ec2-user/sampleapp/scripts/httpd_start.sh
+  - location: /scripts/httpd_start.sh
     timeout: 200
     runas: root
  ApplicationStop:
-  - location: /home/ec2-user/sampleapp/scripts/httpd_stop.sh
+  - location: /scripts/httpd_stop.sh
     timeout: 200
     runas: root
 
